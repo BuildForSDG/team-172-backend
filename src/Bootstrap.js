@@ -2,6 +2,7 @@ const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const routes = require('./routes');
 
 class Bootstrap {
   constructor() {
@@ -23,7 +24,7 @@ class Bootstrap {
   }
 
   initRoutes() {
-    this.app.get('/', (req, res) => res.json({ connected: true }));
+    this.app.use('/', routes);
   }
 
   handleErrors() {
