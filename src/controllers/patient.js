@@ -105,4 +105,16 @@ module.exports = {
       next(error);
     }
   }
+
+  async login(req, res, next) {
+    try {
+      
+      return res.status(NO_CONTENT).json({
+        status: true,
+        message: 'Patient logged in successfully.'
+      });
+    } catch (error) {
+      next(error);
+    }
+  }
 };
