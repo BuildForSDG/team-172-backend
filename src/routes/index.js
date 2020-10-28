@@ -1,9 +1,11 @@
+'use strict';
+
 const router = require('express').Router();
-const patientRoutes = require('./patients');
+const userRoutes = require('./users');
 
 router.get('/', (req, res) => res.json({ connected: true }));
 
-// Patients
-router.use('/patients', patientRoutes);
+// Users
+router.use('/users', userRoutes);
 
 module.exports = router;

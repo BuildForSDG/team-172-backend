@@ -1,3 +1,5 @@
+'use strict';
+
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
@@ -36,6 +38,7 @@ class Bootstrap {
     });
 
     // error handler
+    // eslint-disable-next-line no-unused-vars
     this.app.use((err, req, res, next) => {
       res.status(err.status || 500);
       res.json({

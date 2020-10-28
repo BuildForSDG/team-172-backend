@@ -1,7 +1,10 @@
 module.exports = {
   development: {
     dialect: 'sqlite',
-    storage: './db.dev.sqlite'
+    storage: './db.dev.sqlite',
+    migrationStorageTableName: 'SequelizeMeta',
+    seederStorage: 'sequelize',
+    seederStorageTableName: 'sequelizeData'
   },
   test: {
     dialect: 'sqlite',
@@ -13,6 +16,9 @@ module.exports = {
     database: process.env.DB_NAME,
     host: process.env.DB_HOSTNAME,
     dialect: 'postgres',
-    use_env_variable: 'DATABASE_URL'
+    use_env_variable: 'DATABASE_URL',
+    migrationStorageTableName: 'SequelizeMeta',
+    seederStorage: 'sequelize',
+    seederStorageTableName: 'sequelizeData'
   }
 };
